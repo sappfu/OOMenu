@@ -29,10 +29,11 @@ public class MenuItemLeafTest extends TestCase{
 	
 	@Test
 	public void testRunMenuOptionLeaf() {
-		VisitorTest visitor = new VisitorTest();
-		leaf.runMenuOption(visitor);
+		VisitorDisplayTest display = new VisitorDisplayTest();
+		VisitorInputInterface input = new VisitorInputKeyboard();
+		leaf.runMenuOption(display, input);
 		
-		assertEquals(visitor.display,"Option Leaf is running the runMenuOption method");
+		assertEquals(display.display,"Option Leaf is running the runMenuOption method");
 	}
 
 }

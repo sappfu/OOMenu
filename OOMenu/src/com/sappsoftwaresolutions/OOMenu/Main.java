@@ -28,8 +28,8 @@ public class Main {
 		MenuItemComponent MainMenu = new MenuItemComposite("MainMenu", leaf1, leaf2, leaf3, leaf4,submenu1,submenu2);
 		
 		//create Visitor
-		VisitorInterface visitor = new VisitorPrint();
-		
-		MainMenu.runMenuOption(visitor);
+		VisitorDisplayInterface display = new VisitorDisplayPrint();
+		VisitorInputInterface input = new VisitorInputKeyboard();
+		MainMenu.runMenuOption(display,input);
 	}
 }

@@ -1,5 +1,5 @@
 package com.sappsoftwaresolutions.OOMenu;
 
-public interface VisitorInterface {
+public interface VisitorDisplayInterface {
 	public void visit(String display);
 }

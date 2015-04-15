@@ -1,6 +1,6 @@
 package com.sappsoftwaresolutions.OOMenu;
 
-public class VisitorPrint implements VisitorInterface{
+public class VisitorDisplayPrint implements VisitorDisplayInterface{
 	
 	public void visit(String display) {
 		System.out.println(display);

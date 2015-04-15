@@ -1,6 +1,6 @@
 package com.sappsoftwaresolutions.OOMenu;
 
-public class VisitorTest implements VisitorInterface{
+public class VisitorDisplayTest implements VisitorDisplayInterface{
 
 	public String display;
 	

@@ -8,5 +8,5 @@ package com.sappsoftwaresolutions.OOMenu;
  */
 public interface MenuItemComponent {
 	public String displayMenuOption();
-	public void runMenuOption(VisitorInterface visitor);
+	public void runMenuOption(VisitorDisplayInterface display, VisitorInputInterface input);
 }
