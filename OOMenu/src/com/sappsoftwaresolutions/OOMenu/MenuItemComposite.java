@@ -19,28 +19,29 @@ public class MenuItemComposite implements MenuItemComponent{
 		return this.menuOption;
 	}
 
-	public void runMenuOption() {
+	public void runMenuOption(VisitorInterface visitor) {
 		while(true){
 			int i=0;
 			for (i=0;i<array.size();i++){
-				System.out.println(i+1 + " " + array.get(i).displayMenuOption());
+				visitor.visit(i+1 + " " + array.get(i).displayMenuOption());
 			}
-			System.out.println(i+1 + " " + "Exit Current Menu");
+			visitor.visit(i+1 + " Exit Current Menu");
 			try{
 				int input = Integer.parseInt(Reader.br.readLine());
 				if (input-1 == array.size()){
+					visitor.visit("Exiting menu.");
 					return;
 				}
-				this.array.get(input-1).runMenuOption();
+				this.array.get(input-1).runMenuOption(visitor);
 			}
 			catch(IOException ioe){
-				System.out.println(ioe);
+				visitor.visit(ioe.toString());;
 			}
 			catch(NumberFormatException nfe){
-				System.out.println("Invalid input option.");
+				visitor.visit("Invalid input option.");
 			}
 			catch(Exception e){
-				System.out.println("Invalid input option.");
+				visitor.visit("Invalid input option.");
 			}
 		}
 	}

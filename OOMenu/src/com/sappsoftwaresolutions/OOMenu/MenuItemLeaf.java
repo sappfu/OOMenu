@@ -11,9 +11,9 @@ public class MenuItemLeaf implements MenuItemComponent{
 		return this.menuOption;
 	}
 
-	//Extend MenuItemLeaf and override method to change what each runMenuOption does
-	public void runMenuOption() {
-		System.out.println("Option " + this.menuOption + " is running the runMenuOption method");
+	//Extend MenuItemLeaf and override method to change what each runMenuOption does. Return a string with the result.
+	public void runMenuOption(VisitorInterface visitor) {
+		visitor.visit("Option " + this.menuOption + " is running the runMenuOption method");
 	}
 	
 }
